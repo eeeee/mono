@@ -122,6 +122,16 @@ namespace System.Reflection {
 			}
 		}
 
+#if NET_4_5
+		public virtual Delegate CreateDelegate(Type delegateType) {
+			return Delegate.CreateDelegate(delegateType, this);
+		}
+
+		public virtual Delegate CreateDelegate(Type delegateType, Object target) {
+			return Delegate.CreateDelegate(delegateType, target, this);
+		}
+#endif
+
 #if NET_4_0
 		public override bool Equals (object obj)
 		{
