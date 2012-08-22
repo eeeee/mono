@@ -84,6 +84,8 @@ namespace System.Xml.Schema
 
 		internal override void CheckRecursion (int depth, ValidationEventHandler h, XmlSchema schema)
 		{
+#warning temp workaround for https://bugzilla.xamarin.com/show_bug.cgi?id=6653
+			return;
 			foreach (XmlSchemaParticle p in this.Items)
 				p.CheckRecursion (depth, h, schema);
 		}
