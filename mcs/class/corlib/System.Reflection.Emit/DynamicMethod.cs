@@ -161,7 +161,11 @@ namespace System.Reflection.Emit {
 		}
 
 		[ComVisible (true)]
+#if NET_4_5
+		public override sealed Delegate CreateDelegate (Type delegateType)
+#else
 		public Delegate CreateDelegate (Type delegateType)
+#endif
 		{
 			if (delegateType == null)
 				throw new ArgumentNullException ("delegateType");
@@ -175,7 +179,11 @@ namespace System.Reflection.Emit {
 		}
 
 		[ComVisible (true)]
+#if NET_4_5
+		public override sealed Delegate CreateDelegate (Type delegateType, object target)
+#else
 		public Delegate CreateDelegate (Type delegateType, object target)
+#endif
 		{
 			if (delegateType == null)
 				throw new ArgumentNullException ("delegateType");
