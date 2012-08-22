@@ -79,10 +79,9 @@ namespace System.Data.Common {
 		}
 		
 #if NET_4_5
-		[MonoTODO]
 		public static DbProviderFactory GetFactory (DbConnection connection)
 		{
-			throw new NotImplementedException ();
+			return (DbProviderFactory)typeof(DbConnection).GetProperty("DbProviderFactory", BindingFlags.NonPublic|BindingFlags.Instance).GetValue(connection, null);
 		}
 #endif
 
