@@ -84,7 +84,7 @@ namespace System.Reflection {
 				if (method.MethodHandle == handle)
 					return method;
 			}
-			return null;
+			return GetMethodFromIntPtr (handle.Value, declaringType.Value);
 		}
 
 		public abstract MethodImplAttributes GetMethodImplementationFlags();
