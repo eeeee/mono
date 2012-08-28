@@ -73,9 +73,18 @@ namespace System.Reflection {
 		private extern static MethodBase GetMethodFromHandleInternalType (IntPtr method_handle, IntPtr type_handle);
 
 		[ComVisible (false)]
-		public static MethodBase GetMethodFromHandle (RuntimeMethodHandle handle, RuntimeTypeHandle declaringType)
+/*		public static MethodBase GetMethodFromHandle (RuntimeMethodHandle handle, RuntimeTypeHandle declaringType)
 		{
 			return GetMethodFromIntPtr (handle.Value, declaringType.Value);
+		}*/
+		public static MethodBase GetMethodFromHandle (RuntimeMethodHandle handle, RuntimeTypeHandle declaringType)
+		{
+			foreach (var method in Type.GetTypeFromHandle (declaringType).GetMethods())
+			{
+				if (method.MethodHandle == handle)
+					return method;
+			}
+			return null;
 		}
 
 		public abstract MethodImplAttributes GetMethodImplementationFlags();
