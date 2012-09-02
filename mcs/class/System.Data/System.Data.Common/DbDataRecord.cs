@@ -188,7 +188,7 @@ namespace System.Data.Common
 		internal DbDataRecordImpl (SchemaInfo[] schema, object[] values)
 		{
 			this.schema = schema;
-			this.values = values;
+			this.values = (object[]) values.Clone();
 			this.fieldCount = values.Length;
 		}
 
