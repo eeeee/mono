@@ -1,5 +1,4 @@
-// cs0120: Ie, a static method invoking a non-static method
-// `An object reference is required for the nonstatic field, method or property test.method()
+// CS0120: An object reference is required to access non-static member `test.method()'
 // Line: 11
 
 class test {

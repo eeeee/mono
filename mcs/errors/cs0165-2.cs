@@ -1,3 +1,6 @@
+// CS0165: Use of unassigned local variable `x'
+// Line: 16
+
 class T {
 	void fun (ref int a)
 	{

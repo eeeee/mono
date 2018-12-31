@@ -1,12 +1,14 @@
-// cs0029: cannot implicitly conver type `double' to `decimal'
-// Line: 7
+// CS0029: Cannot implicitly convert type `X' to `bool'
+// Line : 11
+
+class X {
+}
 
 class T {
-	public static int Main (string [] args)
+	static void Main ()
 	{
-		decimal d = 100d;
-
-		return 1;
+		X x = new X ();
+		if (x){
+		}
 	}
 }
-	      

@@ -1,3 +1,6 @@
+// CS0110: The evaluation of the constant value for `A.B.C.X' involves a circular definition
+// Line: 9
+
 class A {
 	int a;
 	
@@ -13,7 +16,11 @@ class A {
 			}
 
 			enum F {
-				A, B, C, D = X, E
+			    A, 
+			    B,
+			    C,
+			    D = X,
+			    E
 			}
 
 			const int X = Y + 1;

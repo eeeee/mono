@@ -1,15 +1,12 @@
-// cs1501.cs: No overload for method `Base' takes `0' arguments
-// Line: 12
-class Base {
-	Base (string x)
-	{
-	}
-}
+// CS1501: No overload for method `this' takes `2' arguments
+// Line : 10
 
-// Notice how there is no invocation to "base (something)"
-
-class Derived : Base {
-	Derived ()
-	{
+class C
+{
+	public bool this [int i] { get { return false; } set {} }
+	
+	void Foo ()
+	{	C c = new C ();
+		c [0, 0] = null;
 	}
 }

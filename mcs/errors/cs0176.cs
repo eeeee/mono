@@ -1,7 +1,10 @@
-// cs0176.cs: cannot be accessed with an instance reference, use typename instead
-// Line: 12
+// CS0176: Static member `X.void_method()' cannot be accessed with an instance reference, qualify it with a type name instead
+// Line: 15
 class X {
-	static void void_method ()
+	public static void void_method ()
+	{
+	}
+	public void void_method (int i)
 	{
 	}
 }

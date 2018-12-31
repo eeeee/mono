@@ -1,9 +1,21 @@
-// cs0117: `int' does not contain a definition for 'E'.
-// Line: 7
+// CS0117: `A' does not contain a definition for `Method'
+// Line: 8
 
-class T {
-	public static int Main (string [] args )
+public class E : A
+{
+	void Test ()
 	{
-		int x = 1.E;
+		base.Method ();
 	}
+}
+
+static class S
+{
+	public static void Method (this A a)
+	{
+	}
+}
+
+public class A
+{
 }

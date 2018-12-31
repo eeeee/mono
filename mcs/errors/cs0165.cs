@@ -1,8 +1,8 @@
-// cs0165.cs: Use of unassigned local variable
+// CS0165: Use of unassigned local variable `errors'
 // Line: 9
 
 class T {
-	public T ()
+	static void Main ()
 	{
 		int errors;
 
